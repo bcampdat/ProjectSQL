@@ -3,8 +3,8 @@
 
 SELECT p.nombre_profesor, COALESCE(AVG(ca.nota), 0) AS calificacion_promedio
 FROM calificaciones ca
-JOIN cursos cu ON ca.curso_id = cu.` id_curso`
-JOIN profesores p ON cu.profesor_id = p.` id_profesor`
+JOIN cursos cu ON ca.curso_id = cu.`id_curso`
+JOIN profesores p ON cu.profesor_id = p.`id_profesor`
 GROUP BY p.nombre_profesor;
 
 
@@ -23,7 +23,7 @@ GROUP BY e.nombre_estudiante;
 SELECT e.nombre_estudiante, cu.nombre_curso
 FROM calificaciones ca
 JOIN estudiantes e ON ca.estudiante_id = e.id_estudiantes
-JOIN cursos cu ON ca.curso_id = cu.` id_curso`
+JOIN cursos cu ON ca.curso_id = cu.`id_curso`
 ORDER BY e.nombre_estudiante, cu.nombre_curso;
 
 
@@ -32,7 +32,7 @@ ORDER BY e.nombre_estudiante, cu.nombre_curso;
 
 SELECT cu.nombre_curso, COALESCE(AVG(ca.nota), 0) AS calificacion_promedio
 FROM calificaciones ca
-JOIN cursos cu ON ca.curso_id = cu.` id_curso`
+JOIN cursos cu ON ca.curso_id = cu.`id_curso`
 GROUP BY cu.nombre_curso
 ORDER BY calificacion_promedio ASC;
 
